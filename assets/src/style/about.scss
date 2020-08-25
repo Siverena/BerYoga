@@ -1,0 +1,75 @@
+.about {
+  margin-top: 160px;
+  margin-left: 120px;
+  width: 50%;
+  padding-right: 115px;
+
+  &__text {
+    margin: 0;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.65);
+    font-family: 'FivoSans-Light';
+    line-height: 40px;
+  }
+
+  &__btn-wrapper {
+    margin-top: 54px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    padding: 20px 65px;
+    color: $pink;
+    border: 1px solid $pink;
+    border-radius: 40px;
+    font-family: 'FivoSans-Regular';
+    font-size: 20px;
+    white-space: nowrap;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    &:hover {
+      background-color: $pink;
+      color: #ffffff;
+      box-shadow: -1px 1px 2px 0px rgba(255, 255, 255, 0.29), -7px 6px 9px 0px #ff6a6d78;
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      color: #ffffff;
+      background-color: tone($pink, 3, down);
+      box-shadow: -1px 1px 2px 0px rgba(255, 255, 255, 0.29), -7px 6px 9px 0px #ff6a6d78;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    &__background {
+      background-image: url(../img/header-bg-tablet.png);
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: cover;
+    }
+
+    &__btn-wrapper {
+      justify-content: flex-start;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    &__btn-wrapper {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+}

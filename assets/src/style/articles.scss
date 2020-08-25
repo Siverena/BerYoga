@@ -1,0 +1,118 @@
+.articles {
+  &__wrapper {
+    margin-top: 280px;
+  }
+
+}
+
+.article {
+  background-repeat: no-repeat;
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  &.first {
+    background-image: url(../img/the-healing.svg);
+    background-position: right center;
+    padding-left: 57px;
+    padding-right: 50%;
+    margin-bottom: 50px;
+  }
+
+  &.second {
+    background-image: url(../img/ways.svg);
+    background-position: left center;
+    padding-right: 57px;
+    padding-left: 50%;
+  }
+
+  &__author {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.51);
+    margin: 0;
+    font-family: 'FivoSans-Light';
+  }
+
+  &__name {
+    font-size: 50px;
+    margin-top: 0;
+    line-height: auto;
+    margin-bottom: 58px;
+  }
+
+  &__content {
+    padding-left: 110px;
+    font-family: 'FivoSans-Light';
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.65);
+    line-height: 40px;
+  }
+
+  &__more {
+    font-family: 'FivoSans-Oblique';
+    padding-left: 110px;
+    margin-top: 66px;
+    color: #3cbef1;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .articles {
+    &__wrapper {
+      margin-top: 200px;
+    }
+
+  }
+
+  .article {
+
+    &.first {
+      width: 100%;
+      padding: 0;
+      margin: 0 0 40px 0;
+      background-image: none;
+
+      .article__background {
+        background-image: url(../img/the-healing.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+        box-shadow: none;
+        border-radius: 50%;
+        border: 1px solid $pink;
+        margin-bottom: 50px;
+      }
+    }
+
+    &.second {
+      background-image: none;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+
+      .article__background {
+        background-image: url(../img/ways.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+        box-shadow: none;
+        border-radius: 50%;
+        border: 1px solid $pink;
+        margin-bottom: 50px;
+      }
+    }
+
+    &__content {
+      padding: 0;
+    }
+    &__more {
+      padding: 0;
+    }
+  }
+}

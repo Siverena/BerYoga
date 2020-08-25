@@ -1,0 +1,99 @@
+.content {
+  background-image: url(../img/whats-bg.svg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding: 10px 0;
+
+  &__wrapper {
+    margin-top: 253px;
+    background-image: url(../img/whats-bg-left.png), url(../img/whats-bg-right.png);
+    background-repeat: no-repeat;
+    background-position: bottom 0px left, top -22px right;
+    margin-bottom: 150px;
+  }
+
+  &__wrap {
+    margin-left: auto;
+    width: 50%;
+    padding: 0 60px;
+  }
+
+  &__list {
+    padding: 0 65px;
+    list-style: none;
+  }
+
+  &__item {
+    font-size: 18px;
+    font-family: 'FivoSans-Light';
+    line-height: 40px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.65);
+
+    p {
+      font-family: 'FivoSans-Bold';
+      font-size: 24px;
+      color: rgba(0, 0, 0, 0.75);
+    }
+
+    &::before {
+      content: "";
+      background-image: url(../img/cheklist.svg);
+      background-size: 31px 24px;
+      background-repeat: no-repeat;
+      display: block;
+      position: absolute;
+      width: 31px;
+      height: 24px;
+      left: -40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .content {
+    background-image: none;
+    padding: 10px 0;
+
+    &__background {
+      background-image: url(../img/whats-bg.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      margin: 0 auto;
+      width: 400px;
+      height: 400px;
+      box-shadow: none;
+      border-radius: 50%;
+      border: 1px solid $pink;
+    }
+
+    &__wrapper {
+      margin-top: 100px;
+      background-image: url(../img/articles-bg-left.png), url(../img/articles-bg-right-2.png);
+      background-position: bottom 1px left, top 211px right;
+    }
+
+    &__wrap {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    &__wrapper {
+      background-position: bottom 1px left, top 537px right;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .content {
+    &__background {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}

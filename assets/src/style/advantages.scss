@@ -1,0 +1,58 @@
+.advantages {
+  text-align: center;
+
+  &__wrapper {
+    margin-top: 456px;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.65);
+    font-family: 'FivoSans-Light';
+    line-height: 40px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 140px;
+  }
+
+  &__item {
+    width: 267px;
+    padding: 15px;
+  }
+
+  &__name {
+    color: #3b3838;
+    font-size: 24px;
+    font-family: 'FivoSans-Bold';
+  }
+
+  &__description {
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 18px;
+    font-family: 'FivoSans-Light';
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .advantages {
+    &__wrapper {
+      margin-top: 100px;
+    }
+
+    &__list {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      flex-shrink: 0;
+    }
+  }
+}

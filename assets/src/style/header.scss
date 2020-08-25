@@ -1,0 +1,219 @@
+.header {
+  padding-top: 80px;
+
+  &__logo {
+    font-family: 'FivoSans-Heavy';
+    font-size: 32px;
+    color: $pink;
+  }
+
+  &__login {
+    padding: 11px 49px;
+    color: #ffffff;
+    background-color: $pink;
+    border-radius: 40px;
+    font-size: 18px;
+    font-family: 'FivoSans-Regular';
+    margin-left: auto;
+
+    &:hover {
+      background-color: tone($pink, 1, down);
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      background-color: tone($pink, 3, down);
+    }
+  }
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    width: 65%;
+    justify-content: space-around;
+  }
+
+  &__btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-left: 25px;
+    display: none;
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+
+    &--open {
+      position: relative;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .image {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $pink;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        top: 0;
+        right: 0;
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: $pink;
+      }
+
+      &:active,
+      &:focus {
+
+        .open-image,
+        &::after,
+        &::before {
+          outline: none;
+          background-color: ton($pink, 3, down);
+        }
+      }
+    }
+
+    &--close {
+      position: relative;
+      margin-left: 25px;
+
+      .image {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        &::after,
+        &::before {
+          content: "";
+          display: block;
+          top: 17px;
+          right: 0;
+          position: absolute;
+          width: 106%;
+          height: 3px;
+          background-color: $pink;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &:hover::after,
+        &:hover::before {
+          background-color: #000000;
+        }
+      }
+    }
+  }
+
+  &__item {
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  &__link {
+    font-family: 'FivoSans-Regular';
+    font-size: 18px;
+    text-decoration: none;
+    color: #1c2056;
+
+    &.active {
+      color: $pink;
+    }
+
+    &:hover {
+      color: tone($pink, 1, down);
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      color: tone($pink, 3, down);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    padding-top: 0;
+
+    &__nav {
+      padding: 10px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-nav {
+    &__list {
+      display: none;
+
+      &.show {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        flex-wrap: wrap;
+        top: 70px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &__btn {
+      display: flex;
+    }
+
+    &__item {
+      flex-grow: 1;
+      text-align: center;
+      padding: 0 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    &__login {
+      padding: 7px 27px;
+    }
+  }
+
+  .main-nav {
+    &__list {
+      &.show {
+        display: flex;
+      }
+    }
+
+    &__item {
+      margin-bottom: 10px;
+    }
+  }
+}

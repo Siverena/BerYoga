@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'FivoSans-Light';
+  src: url(../fonts/FivoSans-Light.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FivoSans-Regular';
+  src: url(../fonts/FivoSans-Regular.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FivoSans-Heavy';
+  src: url(../fonts/FivoSans-Heavy.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FivoSans-Bold';
+  src: url(../fonts/FivoSans-Bold.otf) format('opentype');
+  font-weight: 400;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'FivoSans-Oblique';
+  src: url(../fonts/FivoSans-Oblique.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FivoSans-Medium';
+  src: url(../fonts/FivoSans-Medium.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@function tone($color, $tone: 1, $dir: up) {
+  $adjust: if($dir==up, 16, -16) * $tone;
+  @return adjust-color($color, $red: $adjust, $green: $adjust, $blue: $adjust);
+}
+
+$pink: #ff6a6d;
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url(../img/header-bg.png), url(../img/footer-bg.png);
+  background-position: top center, bottom center;
+  background-repeat: no-repeat;
+  background-color: #fbfcfc;
+  background-size: contain;
+}
+
+.container {
+  width: 1424px;
+  margin: 0 auto;
+}
+
+.block-bg {
+  display: none;
+  width: 100%;
+  height: 300px;
+  box-shadow: inset 0 0 30px 30px #ffffff, 0 0 30px 30px #ffffff;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 1424px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .block-bg {
+    display: block;
+  }
+
+  body {
+    background-image: none;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-color: #fbfcfc;
+    background-size: contain;
+  }
+}
+
+
+.site-btn {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.section-header {
+  font-family: 'FivoSans-Bold';
+  font-size: 50px;
+  line-height: 60px;
+  color: #3b3838;
+}
+
+@import "header.scss";
+@import "about.scss";
+@import "advantages.scss";
+@import "content.scss";
+@import "articles.scss";
+@import "price.scss";
+@import "footer.scss";
